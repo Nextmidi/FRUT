@@ -11,4 +11,5 @@ cd "$BUILD_DIR"
 
 cmake .. -DCMAKE_INSTALL_PREFIX="../prefix" -DJUCE_ROOT="../../JUCE" -DJucer2CMake_JUCE_LICENSE=Indie 
 
+cmake -E env CXXFLAGS="-Wno-unused-parameter" cmake ..
 cmake --build . --target install --parallel 8
