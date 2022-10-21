@@ -33,7 +33,6 @@ jucer_project_settings(
   COMPANY_COPYRIGHT "Raw Material Software Limited"
   USE_GLOBAL_APPCONFIG_HEADER OFF
   ADD_USING_NAMESPACE_JUCE_TO_JUCE_HEADER ON
-  REPORT_JUCE_APP_USAGE OFF # Required for closed source applications without an Indie or Pro JUCE license
   DISPLAY_THE_JUCE_SPLASH_SCREEN OFF # Required for closed source applications without an Indie or Pro JUCE license
   SPLASH_SCREEN_COLOUR "Dark"
   PROJECT_TYPE "GUI Application"
@@ -489,7 +488,7 @@ jucer_project_module(
 )
 
 jucer_export_target(
-  "Xcode (MacOSX)"
+  "Xcode (macOS)"
   ICON_SMALL "Source/BinaryData/Icons/juce_icon.png"
   ICON_LARGE "Source/BinaryData/Icons/juce_icon.png"
   DOCUMENT_FILE_EXTENSIONS
@@ -512,21 +511,23 @@ jucer_export_target(
 )
 
 jucer_export_target_configuration(
-  "Xcode (MacOSX)"
+  "Xcode (macOS)"
   NAME "Debug"
   DEBUG_MODE ON
   BINARY_NAME "Projucer"
   ADD_RECOMMENDED_COMPILER_WARNING_FLAGS "Enabled"
+  MACOS_DEPLOYMENT_TARGET "10.12"
   CXX_LIBRARY "LLVM libc++"
 )
 
 jucer_export_target_configuration(
-  "Xcode (MacOSX)"
+  "Xcode (macOS)"
   NAME "Release"
   DEBUG_MODE OFF
   BINARY_NAME "Projucer"
   LINK_TIME_OPTIMISATION OFF
   ADD_RECOMMENDED_COMPILER_WARNING_FLAGS "Enabled"
+  MACOS_DEPLOYMENT_TARGET "10.12"
   CXX_LIBRARY "LLVM libc++"
 )
 
